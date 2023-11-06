@@ -39,76 +39,50 @@ Make sure you have the following installed:
 
 ## API Endpoints
 
-### 1. **Get All Todos**
+### 1. **Get All Todos:**
 
-- **Endpoint:** `GET /todos`
-- **Response:** Array of all todos.
+- **Method:** GET
+- **URL:** `http://localhost:3000/ap1/v1/getTodos`
 
-### 2. **Get Todo by ID**
+### 2. **Get Todo by ID:**
 
-- **Endpoint:** `GET /todos/:id`
-- **Response:** Todo with the specified ID.
+- **Method:** GET
+- **URL:** `http://localhost:3000/ap1/v1/getTodos:id`
 
-### 3. **Create a Todo**
+### 3. **Create Todo:**
 
-- **Endpoint:** `POST /todos`
-- **Request Body:**
+- **Method:** POST
+- **URL:** `http://localhost:3000/ap1/v1/createTodo`
+- **Body:**
   ```json
   {
-    "title": "Todo Title",
+    "title": "New Todo",
     "description": "Todo Description"
   }
   ```
-- **Response:** Created Todo object.
+- **Headers:**
+  - `Content-Type: application/json`
 
-### 4. **Update Todo**
+### 4. **Update Todo:**
 
-- **Endpoint:** `PUT /todos/:id`
-- **Request Body:**
+- **Method:** PUT
+- **URL:** `http://localhost:3000/api/v1/updateTodo/:id`
+- **Body:**
   ```json
   {
-    "title": "Updated Todo Title",
-    "description": "Updated Todo Description"
+    "title": "Updated Todo",
+    "description": "Updated Description"
   }
   ```
-- **Response:** Updated Todo object.
+- **Headers:**
+  - `Content-Type: application/json`
 
-### 5. **Delete Todo**
+### 5. **Delete Todo:**
 
-- **Endpoint:** `DELETE /todos/:id`
-- **Response:** Success message.
+- **Method:** DELETE
+- **URL:** `http://localhost:3000/api/v1/deleteTodo/:id`
 
-## Sample Request (using cURL)
-
-1. **Get All Todos:**
-
-   ```bash
-   curl http://localhost:3000/todos
-   ```
-
-2. **Get Todo by ID:**
-
-   ```bash
-   curl http://localhost:3000/todos/:id
-   ```
-
-3. **Create Todo:**
-
-   ```bash
-   curl -X POST -H "Content-Type: application/json" -d '{"title": "New Todo", "description": "Todo Description"}' http://localhost:3000/todos
-   ```
-
-4. **Update Todo:**
-
-   ```bash
-   curl -X PUT -H "Content-Type: application/json" -d '{"title": "Updated Todo", "description": "Updated Description"}' http://localhost:3000/todos/:id
-   ```
-
-5. **Delete Todo:**
-
-   ```bash
-   curl -X DELETE http://localhost:3000/todos/:id
-   ```
+In Postman, you can select the appropriate HTTP method from the dropdown menu, enter the URL, set the request body and headers accordingly, and then click "Send" to make the request.
 
 ## Technologies Used
 
